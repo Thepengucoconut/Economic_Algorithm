@@ -6,25 +6,6 @@
 #include <stdio.h>
 #include <string.h>
 
-#define COUNTOF(x) (sizeof(x) / sizeof( (x)[0]))
-/*
-functions here serve to separate the various algorithm versions and to separate the two
-decks that will be playtested.
-*/
-int execute_v1_1(int x);
-int execute_v1_2(int x);
-
-int execute_v2_1(int x);
-int execute_v2_2(int x);
-
-int execute_v3_1(int x);
-int execute_v3_2(int x);
-
-//search and pay functions for both decks.
-int search_1(string card);
-int search_2(string card);
-
-
 int main(void){
     int startmoney = 600;
     int inc = 0;
@@ -71,14 +52,4 @@ int main(void){
         inc++;
     }
     while(inc < sizeof(vers));
-}
-
-int execute_v3_1(int x){
-    printf("version 3.1 has not been released.\n");
-    return x;
-}
-
-int execute_v3_2(int x){
-    printf("version 3.2 has not been released.\n");
-    return x;
 }
