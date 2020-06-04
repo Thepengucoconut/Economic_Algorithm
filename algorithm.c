@@ -11,7 +11,7 @@ int main(void){
     int inc = 0;
 
     //all of the existing versions of the economic algorithm.
-    string vers[6] = {"v1.1", "v1.2", "v2.1", "v2.2", "v3.1", "v3.2"};
+    string vers[6] = {"1.1", "1.2", "2.1", "2.2", "3.1", "3.2"};
     string ver = get_string("Eco-Alg. Ver: ");
 
     int vercomp = strcmp(vers[2], ver);
