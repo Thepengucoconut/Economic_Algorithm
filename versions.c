@@ -31,7 +31,7 @@ int execute_v1_1(int yourmoney){
             break;
         }
 
-        //if player says they lost, exit the game, also fuck them.
+        //if player says they lost, exit the game, also screw them.
         else if(action == 'l'){
             printf("You are absolute G A R B A G E\n");
             break;
@@ -41,7 +41,12 @@ int execute_v1_1(int yourmoney){
         else if(action == 'b'){
             string card1 = get_string("Card Purchased: ");
 
-            if(search_1(card1) == -1){
+            if(card1[0] == 'l'){
+                yourmoney = yourmoney - landprice;
+                printf("CURRENT FUNDS: $%d\n", yourmoney);
+            }
+
+            else if(search_1(card1) == -1){
                 if(search_2(card1) != -1){
                     printf("CANNOT PURCHASE CARD FROM THIS DECK");
                 }
@@ -54,17 +59,13 @@ int execute_v1_1(int yourmoney){
             else if(search_1(card1) != -1){
                 if(yourmoney - prices_1[search_1(card1)] <= 0){
                     printf("INSUFFICIENT FUNDS\n");
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
 
                 else{
                 yourmoney = yourmoney - prices_1[search_1(card1)];
-                printf("CURRENT FUNDS: %d\n", yourmoney);
+                printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
-            }
-
-            else if(card1[0] == 'l'){
-                yourmoney = yourmoney - landprice;
             }
         }
 
@@ -81,13 +82,17 @@ int execute_v1_1(int yourmoney){
 
                 if(type[0] == 'y'){
                     yourmoney = yourmoney + (prices_2[search_2(card1)] * 0.75);
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
                 else if(type[0] == 'n'){
                     yourmoney = yourmoney + (prices_2[search_2(card1)] * 0.5);
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
             }
+        }
+
+        else if (action == 'm'){
+            printf("$%d\n", yourmoney);
         }
     }
     while(true);
@@ -119,7 +124,7 @@ int execute_v1_2(int yourmoney){
             break;
         }
 
-        //if player says they lost, exit the game, also fuck them.
+        //if player says they lost, exit the game, also screw them.
         else if(action == 'l'){
             printf("You are absolute G A R B A G E\n");
             break;
@@ -129,10 +134,16 @@ int execute_v1_2(int yourmoney){
         else if(action == 'b'){
             string card1 = get_string("Card Purchased: ");
 
-            if(search_2(card1) == -1){
+            if(card1[0] == 'l'){
+                yourmoney = yourmoney - landprice;
+                printf("CURRENT FUNDS: $%d\n", yourmoney);
+            }
+
+            else if(search_2(card1) == -1){
                 if(search_1(card1) != -1){
                     printf("CANNOT PURCHASE CARD FROM THIS DECK");
                 }
+
                 else{
                     printf("CARD NOT FOUND\n");
                     continue;
@@ -142,17 +153,13 @@ int execute_v1_2(int yourmoney){
             else if(search_2(card1) != -1){
                 if(yourmoney - prices_2[search_2(card1)] <= 0){
                     printf("INSUFFICIENT FUNDS\n");
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
 
                 else{
                 yourmoney = yourmoney - prices_2[search_2(card1)];
-                printf("CURRENT FUNDS: %d\n", yourmoney);
+                printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
-            }
-
-            else if(card1[0] == 'l'){
-                yourmoney = yourmoney - landprice;
             }
         }
 
@@ -169,14 +176,17 @@ int execute_v1_2(int yourmoney){
 
                 if(type[0] == 'y'){
                     yourmoney = yourmoney + (prices_1[search_1(card1)] * 0.75);
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
 
                 else if(type[0] == 'n'){
                     yourmoney = yourmoney + (prices_1[search_1(card1)] * 0.5);
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
             }
+        }
+        else if (action == 'm'){
+            printf("$%d\n", yourmoney);
         }
     }
     while(true);
@@ -215,7 +225,7 @@ int execute_v2_1(int yourmoney){
             break;
         }
 
-        //if player says they lost, exit the game, also fuck them.
+        //if player says they lost, exit the game, also screw them.
         else if(action == 'l'){
             printf("You are absolute G A R B A G E\n");
             break;
@@ -225,7 +235,12 @@ int execute_v2_1(int yourmoney){
         else if(action == 'b'){
             string card1 = get_string("Card Purchased: ");
 
-            if(search_1(card1) == -1){
+            if(card1[0] == 'l'){
+                yourmoney = yourmoney - landprice;
+                printf("CURRENT FUNDS: $%d\n", yourmoney);
+            }
+
+            else if(search_1(card1) == -1){
                 if(search_2(card1) != -1){
                     printf("CANNOT PURCHASE CARD FROM THIS DECK");
                 }
@@ -238,17 +253,13 @@ int execute_v2_1(int yourmoney){
             else if(search_1(card1) != -1){
                 if(yourmoney - prices_1[search_1(card1)] <= 0){
                     printf("INSUFFICIENT FUNDS\n");
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
 
                 else{
                 yourmoney = yourmoney - prices_1[search_1(card1)];
-                printf("CURRENT FUNDS: %d\n", yourmoney);
+                printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
-            }
-
-            else if(card1[0] == 'l'){
-                yourmoney = yourmoney - landprice;
             }
         }
 
@@ -272,14 +283,17 @@ int execute_v2_1(int yourmoney){
 
                 if(type[0] == 'y'){
                     yourmoney = yourmoney + ((prices_2[search_2(card1)] * multiplier) - (prices_1[search_1(cused)] * multiplier));
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
 
                 else if(type[0] == 'n'){
                     yourmoney = yourmoney + ((prices_2[search_2(card1)] * multiplier) - (prices_1[search_1(cused)] * (multiplier * 16)));
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
             }
+        }
+        else if (action == 'm'){
+            printf("$%d\n", yourmoney);
         }
     }
     while(true);
@@ -311,7 +325,7 @@ int execute_v2_2(int yourmoney){
             break;
         }
 
-        //if player says they lost, exit the game, also fuck them.
+        //if player says they lost, exit the game, also screw them.
         else if(action == 'l'){
             printf("You are absolute G A R B A G E\n");
             break;
@@ -321,7 +335,12 @@ int execute_v2_2(int yourmoney){
         else if(action == 'b'){
             string card1 = get_string("Card Purchased: ");
 
-            if(search_2(card1) == -1){
+            if(card1[0] == 'l'){
+                yourmoney = yourmoney - landprice;
+                printf("CURRENT FUNDS: $%d\n", yourmoney);
+            }
+
+            else if(search_2(card1) == -1){
                 if(search_1(card1) != -1){
                     printf("CANNOT PURCHASE CARD FROM THIS DECK");
                 }
@@ -334,17 +353,13 @@ int execute_v2_2(int yourmoney){
             else if(search_2(card1) != -1){
                 if(yourmoney - prices_2[search_2(card1)] <= 0){
                     printf("INSUFFICIENT FUNDS\n");
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
 
                 else{
                 yourmoney = yourmoney - prices_2[search_2(card1)];
-                printf("CURRENT FUNDS: %d\n", yourmoney);
+                printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
-            }
-
-            else if(card1[0] == 'l'){
-                yourmoney = yourmoney - landprice;
             }
         }
 
@@ -368,14 +383,18 @@ int execute_v2_2(int yourmoney){
 
                 if(type[0] == 'y'){
                     yourmoney = yourmoney + ((prices_1[search_1(card1)] * multiplier) - (prices_2[search_2(cused)] * multiplier));
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
 
                 else if(type[0] == 'n'){
                     yourmoney = yourmoney + ((prices_1[search_1(card1)] * multiplier) - (prices_2[search_2(cused)] * (multiplier * 16)));
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
             }
+        }
+
+        else if (action == 'm'){
+            printf("$%d\n", yourmoney);
         }
     }
     while(true);
@@ -411,7 +430,7 @@ int execute_v3_1(int yourmoney){
             break;
         }
 
-        //if player says they lost, exit the game, also fuck them.
+        //if player says they lost, exit the game, also screw them.
         else if(action == 'l'){
             printf("You are absolute G A R B A G E\n");
             break;
@@ -420,6 +439,11 @@ int execute_v3_1(int yourmoney){
         //if player buys a card, it prompts for the card purchased, searches for the card and subtracts the price from money.
         else if(action == 'b'){
             string card1 = get_string("Card Purchased: ");
+
+            if(card1[0] == 'l'){
+                yourmoney = yourmoney - landprice;
+                printf("CURRENT FUNDS: $%d\n", yourmoney);
+            }
 
             if(search_1(card1) == -1){
                 if(search_2(card1) != -1){
@@ -434,17 +458,13 @@ int execute_v3_1(int yourmoney){
             else if(search_1(card1) != -1){
                 if(yourmoney - prices_1[search_1(card1)] <= 0){
                     printf("INSUFFICIENT FUNDS\n");
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
 
                 else{
                 yourmoney = yourmoney - prices_1[search_1(card1)];
-                printf("CURRENT FUNDS: %d\n", yourmoney);
+                printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
-            }
-
-            else if(card1[0] == 'l'){
-                yourmoney = yourmoney - landprice;
             }
         }
 
@@ -461,17 +481,21 @@ int execute_v3_1(int yourmoney){
 
                 if(type[0] == 'y'){
                     yourmoney = yourmoney + (prices_2[search_2(card1)] * 0.75);
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
                 else if(type[0] == 'n'){
                     yourmoney = yourmoney + (prices_2[search_2(card1)] * 0.5);
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
             }
         }
 
         else if(action == 'r'){
             yourmoney = yourmoney + roundend;
+        }
+
+        else if (action == 'm'){
+            printf("$%d\n", yourmoney);
         }
     }
     while(true);
@@ -503,7 +527,7 @@ int execute_v3_2(int yourmoney){
             break;
         }
 
-        //if player says they lost, exit the game, also fuck them.
+        //if player says they lost, exit the game, also screw them.
         else if(action == 'l'){
             printf("You are absolute G A R B A G E\n");
             break;
@@ -513,7 +537,12 @@ int execute_v3_2(int yourmoney){
         else if(action == 'b'){
             string card1 = get_string("Card Purchased: ");
 
-            if(search_2(card1) == -1){
+            if(card1[0] == 'l'){
+                yourmoney = yourmoney - landprice;
+                printf("CURRENT FUNDS: $%d\n", yourmoney);
+            }
+
+            else if(search_2(card1) == -1){
                 if(search_1(card1) != -1){
                     printf("CANNOT PURCHASE CARD FROM THIS DECK");
                 }
@@ -526,17 +555,13 @@ int execute_v3_2(int yourmoney){
             else if(search_2(card1) != -1){
                 if(yourmoney - prices_2[search_2(card1)] <= 0){
                     printf("INSUFFICIENT FUNDS\n");
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
 
                 else{
                 yourmoney = yourmoney - prices_2[search_2(card1)];
-                printf("CURRENT FUNDS: %d\n", yourmoney);
+                printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
-            }
-
-            else if(card1[0] == 'l'){
-                yourmoney = yourmoney - landprice;
             }
         }
 
@@ -553,17 +578,22 @@ int execute_v3_2(int yourmoney){
 
                 if(type[0] == 'y'){
                     yourmoney = yourmoney + (prices_1[search_1(card1)] * 0.75);
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
 
                 else if(type[0] == 'n'){
                     yourmoney = yourmoney + (prices_1[search_1(card1)] * 0.5);
-                    printf("CURRENT FUNDS: %d\n", yourmoney);
+                    printf("CURRENT FUNDS: $%d\n", yourmoney);
                 }
             }
         }
+
         else if(action == 'r'){
             yourmoney = yourmoney + roundend;
+        }
+
+        else if (action == 'm'){
+            printf("$%d\n", yourmoney);
         }
     }
     while(true);
